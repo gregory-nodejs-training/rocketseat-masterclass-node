@@ -7,6 +7,10 @@
         {
             "name": "Google",
             "url": "http://google.com"
+        },
+        {
+            "name": "Discord",
+            "url": "http://discord.com"
         }
     ]
 }

@@ -4,13 +4,11 @@ const form = document.querySelector('form')
 
 
 async function load() {
-    const res = await fetch("http://localhost:3000/").then((data) => data.json())
-
-    res.urls.map(({ name, url }) => addElement({ name, url }))
+    const res = await fetch("http://localhost:3000").then((data) => data.json());
+    res.urls.map(({ name, url }) => addElement({ name, url }));
 }
 
 load()
-
 
 function addElement({ name, url }) {
     const li = document.createElement('li')
@@ -22,16 +20,24 @@ function addElement({ name, url }) {
     a.target = "_blank"
 
     trash.innerHTML = "x"
-    trash.onclick = () => removeElement(trash)
+    trash.onclick = () => removeElement(trash, name, url)
 
     li.append(a)
     li.append(trash)
     ul.append(li)
 }
 
-function removeElement(el) {
-    if (confirm('Tem certeza que deseja deletar?'))
-        el.parentNode.remove()
+function removeElement(el, name, url) {
+    if (confirm('Tem certeza que deseja deletar?')) {
+        deleteElement(el, name, url);
+    }
+}
+
+async function deleteElement(el, name, url) {
+    const requestUrl = `http://localhost:3000/?name=${name}&url=${url}&del=1`;
+    fetch(requestUrl).then(() => {
+        el.parentNode.remove();
+    }).catch(err => console.log(err));
 }
 
 form.addEventListener("submit", (event) => {
@@ -50,7 +56,14 @@ form.addEventListener("submit", (event) => {
     if (!/^http/.test(url))
         return alert("Digite a url da maneira correta")
 
-    addElement({ name, url })
+    saveElement(name, url);
 
     input.value = ""
 })
+
+async function saveElement(name, url) {
+    const requestUrl = `http://localhost:3000/?name=${name}&url=${url}`;
+    fetch(requestUrl).then(() => {
+        addElement({ name, url });
+    }).catch(err => console.log(err));
+}
