@@ -10,9 +10,9 @@ setInterval(() => {
     const percents = parseInt(mem / total * 100);
 
     const stats = {
-        "free": `${mem} MB`,
-        "total": `${total} MB`,
-        "usage": `${percents} %`
+        free: `${mem} MB`,
+        total: `${total} MB`,
+        usage: `${percents} %`
     }
     console.clear();
     console.log("===== PC STATS =====");

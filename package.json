@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon ./http/server.js"
+    "start": "nodemon ./http/server.js",
+    "api": "nodemon ./http/api/index.js"
   },
   "repository": "https://github.com/gregoryfeijon/rocketseat-masterclass-node",
   "author": "gregory.feijon <gregory.feijon@outlook.com>",
