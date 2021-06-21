@@ -1,0 +1,50 @@
+//========================== Node.JS
+
+	-> O que é? 
+	
+		- JS Runtime Environment
+		
+	-> Para que serve?
+	
+		- Desenvolver aplicações Backend, Frontend, Microserviços, Scripts e Automações, API (Web, Mobile, Desktop);
+		
+	-> Vantagens?
+	
+		- Rápido (Execução, Prototipagem);
+		- Alta Escalabilidade;
+		- Serve para criar aplicações de ponta (Netflix, PayPal);
+		- Ecossistema Gigante (NPM, YARN);
+		- JS Everywhere;
+		
+	
+	-> Como funciona?
+	
+		- Baseado em Engines
+		
+			. Chakra (Edge);
+			. SpiderMonkey (Firefox);
+			. V8 (Chrome);
+			
+		- Ambientes
+		
+			. Browser;
+			. Máquina;
+			
+		- Garçom
+		
+			. Async/Non-blocking;
+			. Handle Requests;
+			. Single Thread;
+			. Event Loop;
+			
+		
+	
+	-> Module System
+	
+		- Common JS(require/exports);
+		- OS;
+		- setInterval(global);
+		- events;
+		- fs;
+		- path;
+		- http;
